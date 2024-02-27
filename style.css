@@ -42,7 +42,6 @@ header {
     z-index: 2;
     background-color: #D4CDC3;
     box-shadow: 0px 1px 5px grey;
-
 }
 
 nav {
@@ -60,7 +59,7 @@ nav a {
 }
 
 main {
-    padding-top: 13rem;
+    padding-top: 12rem;
 }
 
 main, aside {
