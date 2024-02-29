@@ -1,3 +1,2 @@
 -last updated: feb. 29, 2024  
--format looks strange on Github pages compared to VSCode Live Server  
 -iteration 2 under construction !! planning to change entire design and utilize react
