@@ -6,6 +6,8 @@
         <meta name="author" content="Genevive Sanchez">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="script.js"></script>
         <title>Autobiography</title>
     </head>
     
@@ -13,46 +15,50 @@
 
         <header>
             <nav>
-                <a href="#projects">Projects</a>
+                <a href="index.html">About Me</a>
+                <a>Projects</a>
             </nav>
         </header>
 
         <main>
 
-            <section>
-                <h1>GENEVIVE SANCHEZ!</h1>
-                <br><br>
-                <details>
-                    <summary>Who am I? (&#xFF61;&#xB7;  v  &#xB7;&#xFF61;) ?</summary>
-                    <p> 
-                        A second year CS student getting by. Filipino. BOBA LOVER. (&#xE51;&#xB4;&#x6A1;&#x60;&#xE51;)
-                        <br>
-                        Random hobbies: singing, playing Mario Kart 8
-                    </p>
-                    <a href="https://www.flaticon.com/free-stickers/coffee" title="Coffee stickers created by paulalee - Flaticon" target="_blank" rel="noopener noreferrer">
-                        <img src="img/worker.png" alt="Cartoon character clinging onto coffee" id="clinging-coffee-icon" loading="lazy">
-                    </a>
-                </details>
-            </section>
+            <section><h1>GENEVIVE SANCHEZ!</h1></section>
 
             <section>
-                <p>&bull;&bull;&bull;</p>
-    
+                <p style="margin-top: 0;">&bull;&bull;&bull;</p>
                 <article id="projects">
-                    <h2>- PROJECTS -</h2>
-                    <p>
-                        Here are a few of my projects! You can find them on my
-                        <a href="https://github.com/nevisz" target="_blank" rel="noopener noreferrer" title="nevisz">GitHub account!</a>
-                        &gt;&#x1D55;&lt;
-                    </p>
+                    <div class="button-container">
+                        <button id="fe-button">Front End</button>
+                        <button id="gd-button">Graphic Design</button>
+                        <button id="games-button">Games</button>
+                    </div>
+
+                    <h2>Front End</h2>
+
                     <div class="img-container">
                         <figure>
                             <img src="img/airbnb-project.png" alt="Screenshot of Airbnb webpage" id="img1" loading="lazy">
                             <figcaption>Airbnb homepage replica using HTML and CSS (not responsive) </figcaption>
                         </figure>
                         <figure>
-                            <img src="img/madrid-de-metro-project.png" alt="Screenshot of webpage withh masonry layout" id="img2" loading="lazy">
-                            <figcaption>Article webpage using HTML and CSS (responsive, mobile-first)</figcaption>
+                            <img src="img/madrid-de-metro-project.png" alt="Screenshot of webpage withh masonry layout" loading="lazy">
+                            <figcaption>Article webpage using HTML and CSS (responsive, mobile first)</figcaption>
+                        </figure>
+                        <figure style="display:none;">
+                            <img src="img/yearbook-page.jpg" alt="Screenshot of webpage withh masonry layout" loading="lazy">
+                            <figcaption>&lt;placeholder&gt;</figcaption>
+                        </figure>
+                        <figure style="display:none;">
+                            <img src="img/igstory1.png" alt="Instagram story" id="img2" loading="lazy">
+                            <figcaption>&lt;placeholder&gt;</figcaption>
+                        </figure>
+                        <figure style="display:none;"> 
+                            <img src="img/igstory2.png" alt="Instagram story" id="img2" loading="lazy">
+                            <figcaption>&lt;placeholder&gt;</figcaption>
+                        </figure>
+                        <figure style="display:none;">
+                            <img src="img/igstory3.png" alt="Instagram story" id="img2" loading="lazy">
+                            <figcaption>&lt;placeholder&gt;</figcaption>
                         </figure>
                     </div>
                 </article>
