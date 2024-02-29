@@ -7,11 +7,11 @@
 :root {
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
 }
 
 body {
     margin: 0 auto;
+    padding-bottom: 12px;
     width: 100%;
     height: fit-content;
 
@@ -35,7 +35,7 @@ a:hover, a:focus {
 }
 
 header {
-    width: 100vw;
+    width: 100%;
     height: fit-content;
     position: fixed;
     top: 0px;
@@ -58,10 +58,6 @@ nav a {
     text-decoration: none;
 }
 
-main {
-    padding-top: 13rem;
-}
-
 main, aside {
     width: 100%;
     height: fit-content;
@@ -70,7 +66,7 @@ main, aside {
 
 main section {
     padding: 3.8rem; 
-    width: 100vw;
+    width: 100%;
     height: fit-content;
 }
 
@@ -83,11 +79,8 @@ main section h1 {
 }
 
 main section:nth-child(1) {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    justify-items: center;
-
+    margin-top: 11rem;
+    margin-bottom: 5.5rem;
     text-align: center;
 }
 
@@ -103,11 +96,6 @@ main section:nth-child(1) details {
 main section:nth-child(1) details:hover, main section:nth-child(1) details:focus {
     background-color: rgba(212, 205, 195, 0.3);
     box-shadow: 0px 1px 5px grey;
-}
-
-#clinging-coffee-icon {
-    width: 70px;
-    height: auto;
 }
 
 main section:nth-child(2) {
@@ -130,6 +118,32 @@ main section:nth-child(2) > p {
 
 }
 
+#projects .button-container {
+    width: fit-content;
+    align-self: center;
+    
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+button {
+    padding: 10px;
+    
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color:#7d766f;
+    background-color: whitesmoke;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(230, 229, 229);
+}
+
+button:first-child {
+    background-color: rgb(210, 207, 207);
+}
+
 #projects > p {
     margin-bottom: 30px;
 }
@@ -142,37 +156,37 @@ main section:nth-child(2) > p {
     align-self: center;
     
     display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(4,1fr);
     justify-content: center;
     justify-items: center;
     gap: 20px;
 }
 
-#projects div figure {
+.img-container figure {
     margin: 0;
     width: 100%;
     max-height: fit-content;
 }
 
-#projects div figure figcaption {
+.img-container figure:nth-child(1) {
+    grid-column: 1/3;
+}
+
+.img-container figure:nth-child(2) {
+    grid-column: 3/5;
+}
+
+.img-container figure figcaption {
     font-size: 0.75rem;
 }
 
-#projects div figure img {
+.img-container figure img {
     width: 100%;
     height: auto;
-    border: white solid 25px;
+    border: white solid 10px;
     border-radius: 0.3rem;
     box-shadow: 0px 1px 9px rgb(202, 202, 202);
-}
-
-#laptop-icon {
-    width: 85px;
-    height: auto;
-    position: absolute;
-    right: 49px;
-    z-index: 1;
 }
 
 .pop-up {
@@ -197,7 +211,7 @@ footer {
     bottom: 0px;
     z-index: 2;
     background-color: whitesmoke;
-    border-top: lightgray solid 1px;
+    border-top: lightgray solid 1.5px;
 
     display: flex;
     justify-content: center;
@@ -217,28 +231,28 @@ footer img {
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1024px) {
     main section h1 {
         font-size: clamp(45px,8vw,95px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main section h1 {
+        font-size: clamp(10px,15vw,4rem);
     }
     .img-container {
         width: clamp(60%,80vw,100%);
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr;
     }
-}
-
-@media screen and (max-width: 800px) {
-    main section h1 {
-        font-size: clamp(10px,15vw,4rem);
+    .img-container figure:nth-child(1) {
+        grid-column: 1/2;
     }
-    #projects div figure img {
-        border: white solid 10px;
-        box-shadow: 0px 1px 9px rgb(153, 153, 153);
+    
+    .img-container figure:nth-child(2) {
+        grid-column: 1/2;
     }
-}
-
-@media screen and (max-width: 480px) {
 }
 
 @media screen and (max-width: 420px) {
