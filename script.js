@@ -8,8 +8,8 @@ const fe_display = {
 }
 const gd_display = {
     title: "- Graphic Design -",
-    img: ["img/yearbook-cover.jpg","<placeholder>"],
-    img2: ["img/yearbook-doublespread.jpg","<placeholder>"]
+    img: ["img/yearbook-cover.jpg","Yearbook cover designed in Photoshop"],
+    img2: ["img/yearbook-doublespread.jpg","Yearbook doublespread designed in Photoshop"]
 }
 const games_display = {
     title: "- Games -",
