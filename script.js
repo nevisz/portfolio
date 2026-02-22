@@ -57,17 +57,7 @@ $(document).ready(function() {
 
         if (window.matchMedia('(min-width: 768px)').matches) { spanCol(2); }
 
-        // determining which imgs to hide/reveal
-        let count = countHiddenImgs();
-        if (count == 0) {
-            $(".img-container figure:nth-child(3)").css("display","none");
-            $(".img-container figure:nth-child(4)").css("display","none");
-            $(".img-container figure:nth-child(5)").css("display","none");
-            $(".img-container figure:nth-child(6)").css("display","none");
-        }
-        else if (count == 5) {
-            $(".img-container figure:nth-child(2)").css("display","block");
-        }
+        recalibratePortfolioImgDisplay(selected_button);
     });
     $("#gd-button").click(function(){
         selected_button = $(this).attr("id");
@@ -83,21 +73,7 @@ $(document).ready(function() {
 
         if (window.matchMedia('(min-width: 768px)').matches) { spanCol(2); }
 
-        // determining which imgs to hide/reveal
-        let count = countHiddenImgs();
-        if (count == 4) {
-            $(".img-container figure:nth-child(3)").css("display","block");
-            $(".img-container figure:nth-child(4)").css("display","block");
-            $(".img-container figure:nth-child(5)").css("display","block");
-            $(".img-container figure:nth-child(6)").css("display","block");
-        }
-        if (count == 5) {
-            $(".img-container figure:nth-child(2)").css("display","block");
-            $(".img-container figure:nth-child(3)").css("display","block");
-            $(".img-container figure:nth-child(4)").css("display","block");
-            $(".img-container figure:nth-child(5)").css("display","block");
-            $(".img-container figure:nth-child(6)").css("display","block");
-        }
+        recalibratePortfolioImgDisplay(selected_button);
     });
     $("#games-button").click(function(){
         selected_button = $(this).attr("id");
@@ -111,20 +87,8 @@ $(document).ready(function() {
 
         if (window.matchMedia('(min-width: 768px)').matches) { spanCol(1); }
 
-        // determining which imgs to hide/reveal
-        let count = countHiddenImgs();
-        if (count == 0) {
-            $(".img-container figure:nth-child(2)").css("display","none");
-            $(".img-container figure:nth-child(3)").css("display","none");
-            $(".img-container figure:nth-child(4)").css("display","none");
-            $(".img-container figure:nth-child(5)").css("display","none");
-            $(".img-container figure:nth-child(6)").css("display","none");
-        }
-        else if (count == 4) {
-            $(".img-container figure:nth-child(2)").css("display","none");
-        }
+        recalibratePortfolioImgDisplay(selected_button);
     });
-
 });
 
 /* ----- HELPER FUNCTIONS ----- */
@@ -138,4 +102,52 @@ function countHiddenImgs() {
 
 function spanCol(int) {
     $(".img-container figure:nth-child(1)").css("grid-column","1/"+(int+1));
+}
+
+// determining which imgs to hide/reveal based on which button is selected and 
+// how many imgs are currently hidden
+function recalibratePortfolioImgDisplay(selected_button) {
+    let count = countHiddenImgs();
+
+    switch(selected_button) {
+        case "fe-button":
+            if (count == 0) {
+                $(".img-container figure:nth-child(3)").css("display","none");
+                $(".img-container figure:nth-child(4)").css("display","none");
+                $(".img-container figure:nth-child(5)").css("display","none");
+                $(".img-container figure:nth-child(6)").css("display","none");
+            }
+            else if (count == 5) {
+                $(".img-container figure:nth-child(2)").css("display","block");
+            }
+            break;
+        case "gd-button":
+            if (count == 4) {
+                $(".img-container figure:nth-child(3)").css("display","block");
+                $(".img-container figure:nth-child(4)").css("display","block");
+                $(".img-container figure:nth-child(5)").css("display","block");
+                $(".img-container figure:nth-child(6)").css("display","block");
+                }
+            if (count == 5) {
+                $(".img-container figure:nth-child(2)").css("display","block");
+                $(".img-container figure:nth-child(3)").css("display","block");
+                $(".img-container figure:nth-child(4)").css("display","block");
+                $(".img-container figure:nth-child(5)").css("display","block");
+                $(".img-container figure:nth-child(6)").css("display","block");
+            }
+            break;
+        case "games-button":
+            if (count == 0) {
+                $(".img-container figure:nth-child(2)").css("display","none");
+                $(".img-container figure:nth-child(3)").css("display","none");
+                $(".img-container figure:nth-child(4)").css("display","none");
+                $(".img-container figure:nth-child(5)").css("display","none");
+                $(".img-container figure:nth-child(6)").css("display","none");
+            }
+            else if (count == 4) {
+                $(".img-container figure:nth-child(2)").css("display","none");
+            }
+            break;
+        default: break;
+    }
 }
