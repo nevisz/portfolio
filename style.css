@@ -84,20 +84,6 @@ main section:nth-child(1) {
     text-align: center;
 }
 
-main section:nth-child(1) details {
-    margin: 0 auto;
-    padding: 10px;  
-    border: #423E3B solid 1.5px;
-    border-radius: 0.5rem;
-
-    transition: background-color 0.3s;
-}
-
-main section:nth-child(1) details:hover, main section:nth-child(1) details:focus {
-    background-color: rgba(212, 205, 195, 0.3);
-    box-shadow: 0px 1px 5px grey;
-}
-
 main section:nth-child(2) {
     padding-top: 0;
     padding-left: 38px; padding-right: 38px;
@@ -260,3 +246,4 @@ footer img {
         padding: 38px;
     }
 }
+
