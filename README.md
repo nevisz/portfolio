@@ -1,2 +1,2 @@
--last updated: mar. 1, 2024  
--iteration 2 under construction !! planning to change entire design and utilize react
+-last updated: feb. 22, 2026
+-iteration 2 under construction !! planning to change entire design so it reflects my personality/passion
