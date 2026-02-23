@@ -1,2 +1,2 @@
--last updated: feb. 22, 2026
+-last updated: feb. 23, 2026  
 -iteration 2 under construction !! planning to change entire design so it reflects my personality/passion
