@@ -5,17 +5,17 @@
 // constants
 const fe_display = {
     title: "- Front End -",
-    img: ["../img/airbnb-project.png","Airbnb homepage replica using HTML and CSS (not responsive)"],
-    img2: ["../img/madrid-de-metro-project.png","Article webpage using HTML and CSS (responsive, mobile first)"]
+    img: ["img/airbnb-project.png","Airbnb homepage replica using HTML and CSS (not responsive)"],
+    img2: ["img/madrid-de-metro-project.png","Article webpage using HTML and CSS (responsive, mobile first)"]
 }
 const gd_display = {
     title: "- Graphic Design -",
-    img: ["../img/windsong_branding_poster.png","Poster for a hypothetical Taiwanese music festival, Windsong; designed in Illustrator"],
-    img2: ["../img/windsong_branding_digital_story.png","Social media story for a hypothetical Taiwanese music festival, Windsong; designed in Illustrator"]
+    img: ["img/windsong_branding_poster.png","Poster for a hypothetical Taiwanese music festival, Windsong; designed in Illustrator"],
+    img2: ["img/windsong_branding_digital_story.png","Social media story for a hypothetical Taiwanese music festival, Windsong; designed in Illustrator"]
 }
 const games_display = {
     title: "- Games -",
-    img: ["../img/wordle-project.png","Lenient Wordle simulation implemented in Java"],
+    img: ["img/wordle-project.png","Lenient Wordle simulation implemented in Java"],
 }
 const selected_color = "rgb(210, 207, 207)";
 const hover_color = "rgb(237, 235, 235)";
