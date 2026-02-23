@@ -43,6 +43,7 @@ $(document).ready(function() {
 
     switch(page) {
         case "index.html":
+        case "":
             $("nav a[href='index.html']").css("text-decoration","underline");
             break;
         case "projects.html":
