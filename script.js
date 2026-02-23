@@ -1,6 +1,6 @@
 /* ----- SETTING UP INFO ----- */
 
-//constants
+// constants
 const fe_display = {
     title: "- Front End -",
     img: ["img/airbnb-project.png","Airbnb homepage replica using HTML and CSS (not responsive)"],
@@ -8,8 +8,8 @@ const fe_display = {
 }
 const gd_display = {
     title: "- Graphic Design -",
-    img: ["img/yearbook-cover.jpg","Yearbook cover designed in Photoshop"],
-    img2: ["img/yearbook-doublespread.jpg","Yearbook doublespread designed in Photoshop"]
+    img: ["img/windsong_branding_poster.png","Poster for a hypothetical Taiwanese music festival, Windsong; designed in Illustrator"],
+    img2: ["img/windsong_branding_digital_story.png","Social media story for a hypothetical Taiwanese music festival, Windsong; designed in Illustrator"]
 }
 const games_display = {
     title: "- Games -",
@@ -55,9 +55,7 @@ $(document).ready(function() {
         $(".img-container figure:nth-child(2) img").attr("src",fe_img2.src);
         $(".img-container figure:nth-child(2) figcaption").text(fe_display.img2[1]);
 
-        if (window.matchMedia('(min-width: 768px)').matches) { spanCol(2); }
-
-        recalibratePortfolioImgDisplay(selected_button);
+        recalibratePortfolioDisplay(selected_button);
     });
     $("#gd-button").click(function(){
         selected_button = $(this).attr("id");
@@ -71,9 +69,7 @@ $(document).ready(function() {
         $(".img-container figure:nth-child(2) img").attr("src",gd_img2.src);
         $(".img-container figure:nth-child(2) figcaption").text(gd_display.img2[1]);
 
-        if (window.matchMedia('(min-width: 768px)').matches) { spanCol(2); }
-
-        recalibratePortfolioImgDisplay(selected_button);
+        recalibratePortfolioDisplay(selected_button);
     });
     $("#games-button").click(function(){
         selected_button = $(this).attr("id");
@@ -85,9 +81,7 @@ $(document).ready(function() {
         $(".img-container figure:nth-child(1) img").attr("src",games_img.src);
         $(".img-container figure:nth-child(1) figcaption").text(games_display.img[1]);
 
-        if (window.matchMedia('(min-width: 768px)').matches) { spanCol(1); }
-
-        recalibratePortfolioImgDisplay(selected_button);
+        recalibratePortfolioDisplay(selected_button);
     });
 });
 
@@ -100,54 +94,73 @@ function countHiddenImgs() {
     return count;
 }
 
-function spanCol(int) {
-    $(".img-container figure:nth-child(1)").css("grid-column","1/"+(int+1));
-}
-
-// determining which imgs to hide/reveal based on which button is selected and 
+// Determining which imgs to hide/reveal based on which button is selected and 
 // how many imgs are currently hidden
-function recalibratePortfolioImgDisplay(selected_button) {
-    let count = countHiddenImgs();
+function recalibrateImgDisplay(selected_button) {
+    let hiddenCount = countHiddenImgs();
 
     switch(selected_button) {
         case "fe-button":
-            if (count == 0) {
+            if (hiddenCount == 0) {
                 $(".img-container figure:nth-child(3)").css("display","none");
                 $(".img-container figure:nth-child(4)").css("display","none");
-                $(".img-container figure:nth-child(5)").css("display","none");
-                $(".img-container figure:nth-child(6)").css("display","none");
             }
-            else if (count == 5) {
+            else if (hiddenCount == 3) {
                 $(".img-container figure:nth-child(2)").css("display","block");
             }
             break;
         case "gd-button":
-            if (count == 4) {
+            if (hiddenCount == 2) {
                 $(".img-container figure:nth-child(3)").css("display","block");
                 $(".img-container figure:nth-child(4)").css("display","block");
-                $(".img-container figure:nth-child(5)").css("display","block");
-                $(".img-container figure:nth-child(6)").css("display","block");
                 }
-            if (count == 5) {
+            if (hiddenCount == 3) {
                 $(".img-container figure:nth-child(2)").css("display","block");
                 $(".img-container figure:nth-child(3)").css("display","block");
                 $(".img-container figure:nth-child(4)").css("display","block");
-                $(".img-container figure:nth-child(5)").css("display","block");
-                $(".img-container figure:nth-child(6)").css("display","block");
             }
             break;
         case "games-button":
-            if (count == 0) {
+            if (hiddenCount == 0) {
                 $(".img-container figure:nth-child(2)").css("display","none");
                 $(".img-container figure:nth-child(3)").css("display","none");
                 $(".img-container figure:nth-child(4)").css("display","none");
-                $(".img-container figure:nth-child(5)").css("display","none");
-                $(".img-container figure:nth-child(6)").css("display","none");
             }
-            else if (count == 4) {
+            else if (hiddenCount == 2) {
                 $(".img-container figure:nth-child(2)").css("display","none");
             }
             break;
         default: break;
     }
+}
+
+function applyOrientationClasses() {
+  $(".img-container figure").each(function () {
+    const img = $(this).find("img")[0];
+
+    if (!img) return;
+
+    function setClass() {
+      $(this).removeClass("landscape portrait square");
+
+      if (img.naturalWidth > img.naturalHeight) {
+        $(this).addClass("landscape");
+      } else if (img.naturalWidth < img.naturalHeight) {
+        $(this).addClass("portrait");
+      } else {
+        $(this).addClass("square");
+      }
+    }
+
+    if (img.complete) {
+      setClass.call(this);
+    } else {
+      img.onload = () => setClass.call(this);
+    }
+  });
+}
+
+function recalibratePortfolioDisplay(selected_button) {
+    recalibrateImgDisplay(selected_button);
+    applyOrientationClasses();
 }
