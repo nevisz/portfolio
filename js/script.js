@@ -1,4 +1,6 @@
+//-------------------------------
 /* ----- SETTING UP INFO ----- */
+//-------------------------------
 
 // constants
 const fe_display = {
@@ -20,7 +22,7 @@ const hover_color = "rgb(237, 235, 235)";
 const neutral_color = "whitesmoke";
 
 // accounting 
-let selected_button = "fe-button";
+let selected_project_category_button = "fe-button";
 
 // preloading images
 fe_img = new Image(); fe_img.src = fe_display.img[0];
@@ -29,22 +31,42 @@ gd_img = new Image(); gd_img.src = gd_display.img[0];
 gd_img2 = new Image(); gd_img2.src = gd_display.img2[0];
 games_img = new Image(); games_img.src = games_display.img[0];
 
+//------------------------------
 /* ----- JQUERY BUTTONS ----- */
+//------------------------------
 
 $(document).ready(function() {
 
+    // For Nav Bar buttons
+    let page = window.location.pathname.split("/").pop();
+    $("a").css("text-decoration","none");
+
+    switch(page) {
+        case "index.html":
+            $("nav a[href='index.html']").css("text-decoration","underline");
+            break;
+        case "projects.html":
+            $("nav a[href='projects.html']").css("text-decoration","underline");
+            break;
+        default: break;
+    }
+
+    // For Project Category Buttons
+
+    recalibratePortfolioDisplay(selected_project_category_button);
+
     $("button").mouseover(function(){
-        if ($(this).attr("id") != selected_button) {
+        if ($(this).attr("id") != selected_project_category_button) {
             $(this).css("background-color",hover_color);
         }
     });
     $("button").mouseout(function(){
-        if ($(this).attr("id") != selected_button) {
+        if ($(this).attr("id") != selected_project_category_button) {
             $(this).css("background-color",neutral_color);
         }
     });
     $("#fe-button").click(function(){
-        selected_button = $(this).attr("id");
+        selected_project_category_button = $(this).attr("id");
         $(this).css("background-color",selected_color);
         $("#gd-button").css("background-color",neutral_color);
         $("#games-button").css("background-color",neutral_color);
@@ -55,10 +77,10 @@ $(document).ready(function() {
         $(".img-container figure:nth-child(2) img").attr("src",fe_img2.src);
         $(".img-container figure:nth-child(2) figcaption").text(fe_display.img2[1]);
 
-        recalibratePortfolioDisplay(selected_button);
+        recalibratePortfolioDisplay(selected_project_category_button);
     });
     $("#gd-button").click(function(){
-        selected_button = $(this).attr("id");
+        selected_project_category_button = $(this).attr("id");
         $(this).css("background-color",selected_color);
         $("#fe-button").css("background-color",neutral_color);
         $("#games-button").css("background-color",neutral_color);
@@ -69,10 +91,10 @@ $(document).ready(function() {
         $(".img-container figure:nth-child(2) img").attr("src",gd_img2.src);
         $(".img-container figure:nth-child(2) figcaption").text(gd_display.img2[1]);
 
-        recalibratePortfolioDisplay(selected_button);
+        recalibratePortfolioDisplay(selected_project_category_button);
     });
     $("#games-button").click(function(){
-        selected_button = $(this).attr("id");
+        selected_project_category_button = $(this).attr("id");
         $(this).css("background-color",selected_color);
         $("#fe-button").css("background-color",neutral_color);
         $("#gd-button").css("background-color",neutral_color);
@@ -81,11 +103,13 @@ $(document).ready(function() {
         $(".img-container figure:nth-child(1) img").attr("src",games_img.src);
         $(".img-container figure:nth-child(1) figcaption").text(games_display.img[1]);
 
-        recalibratePortfolioDisplay(selected_button);
+        recalibratePortfolioDisplay(selected_project_category_button);
     });
 });
 
+//--------------------------------
 /* ----- HELPER FUNCTIONS ----- */
+//--------------------------------
 
 function countHiddenImgs() {
     let count = $(".img-container figure").filter(function() {
@@ -96,10 +120,10 @@ function countHiddenImgs() {
 
 // Determining which imgs to hide/reveal based on which button is selected and 
 // how many imgs are currently hidden
-function recalibrateImgDisplay(selected_button) {
+function recalibrateImgDisplay(selected_project_category_button) {
     let hiddenCount = countHiddenImgs();
 
-    switch(selected_button) {
+    switch(selected_project_category_button) {
         case "fe-button":
             if (hiddenCount == 0) {
                 $(".img-container figure:nth-child(3)").css("display","none");
@@ -160,7 +184,7 @@ function applyOrientationClasses() {
   });
 }
 
-function recalibratePortfolioDisplay(selected_button) {
-    recalibrateImgDisplay(selected_button);
+function recalibratePortfolioDisplay(selected_project_category_button) {
+    recalibrateImgDisplay(selected_project_category_button);
     applyOrientationClasses();
 }
