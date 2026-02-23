@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+* { box-sizing: border-box; }
+
+:root {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    padding-bottom: 12px;
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    justify-items: center;
+
+    background: url("../img/pawel-czerwinski-unsplash.jpg") no-repeat fixed center;
+    background-size: cover;
+    color: #423E3B;
+}
+
+a {
+    color: black;
+    transition: color 0.4s
+}
+
+a:hover, a:focus { color: #676666; }
+
+header {
+    width: 100%;
+    height: fit-content;
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+    background-color: #D4CDC3;
+    box-shadow: 0px 1px 5px grey;
+}
+
+nav {
+    padding: 2rem;
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+nav a { text-decoration: none; }
+
+main {
+    width: 100%;
+    height: fit-content;
+    font-size: 0.9rem;
+}
+
+main section {
+    padding: 3.8rem; 
+    width: 100%;
+    height: fit-content;
+}
+
+main section h1 {
+    margin: 0;
+    color: #423E3B;
+    font-size: 5.5rem;
+    text-align: center;
+    text-shadow: 0px 1px 5px grey;
+}
+
+main section:nth-child(1) {
+    margin-top: 11rem;
+    margin-bottom: 5.5rem;
+    text-align: center;
+}
+
+footer {
+    padding-top: 6px;
+    width: 100vw;
+    height: fit-content;
+    position: fixed;
+    bottom: 0px;
+    z-index: 2;
+    background-color: whitesmoke;
+    border-top: lightgray solid 1.5px;
+
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.pop-up {
+    padding: 4px;
+    width: fit-content;
+    height: fit-content;
+    font-size: 0.7rem;
+    background-color: #D4CDC3;
+    border-radius: 0.5rem;
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+
+    transform: translate(-50%, 10px);
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+
+#github-container:hover .pop-up, #github-container:focus .pop-up {
+    transform: translate(-50%, 0);
+    opacity: 1;
+}
+
+footer img {
+    width: 23px;
+    height: 23px; 
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 420px) {
+    main section:nth-child(1) {
+        padding: 38px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main section h1 {
+        font-size: clamp(10px,15vw,4rem);
+    }
+    .img-container {
+        width: clamp(60%,80vw,100%);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    main section h1 {
+        font-size: clamp(60px,8vw,95px);
+    }
+}
