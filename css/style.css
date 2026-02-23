@@ -28,6 +28,8 @@ a {
     transition: color 0.4s
 }
 
+a:first-of-type { text-decoration: underline; }
+
 a:hover, a:focus { color: #676666; }
 
 header {
