@@ -140,6 +140,6 @@ footer img {
 
 @media screen and (max-width: 1024px) {
     main section h1 {
-        font-size: clamp(60px,8vw,95px);
+        font-size: clamp(50px,8vw,95px);
     }
 }
