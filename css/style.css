@@ -52,12 +52,7 @@ nav img {
     justify-self: start;
 }
 
-.nav-links {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    gap: 2rem;
-}
+
 
 .nav-links a { text-align: center; }
 
