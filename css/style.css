@@ -46,19 +46,22 @@ nav {
     padding: 1rem;
 }
 
-.nav-links {
-    display: flex;
-    justify-content: right;
-    gap: 2rem;
-}
-
 nav img {
     width: 40px;
     height: auto;
     justify-self: start;
 }
 
-nav a:hover, nav a:focus { color: #676666; }
+.nav-links {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a { text-align: center; }
+
+.nav-links a:hover, nav a:focus { color: #676666; }
 
 main {
     width: 100%;
