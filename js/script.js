@@ -10,8 +10,8 @@ const fe_display = {
 }
 const gd_display = {
     title: "- Graphic Design -",
-    img: ["img/windsong_branding_poster.png","Poster for a hypothetical Taiwanese music festival, Windsong; designed in Illustrator"],
-    img2: ["img/windsong_branding_digital_story.png","Social media story for a hypothetical Taiwanese music festival, Windsong; designed in Illustrator"]
+    img: ["img/windsong_branding_poster.png","Poster for a hypothetical Taiwanese opera festival, Windsong; designed in Illustrator"],
+    img2: ["img/windsong_branding_digital_story.png","Social media story for a hypothetical Taiwanese opera festival, Windsong; designed in Illustrator"]
 }
 const games_display = {
     title: "- Games -",
@@ -39,7 +39,7 @@ $(document).ready(function() {
 
     // For Nav Bar buttons
     let page = window.location.pathname.split("/").pop();
-    $("a").css("text-decoration","none");
+    $("nav a").css("text-decoration","none");
 
     switch(page) {
         case "index.html":
@@ -72,12 +72,6 @@ $(document).ready(function() {
         $("#gd-button").css("background-color",neutral_color);
         $("#games-button").css("background-color",neutral_color);
 
-        $("#projects h2").text(fe_display.title);
-        $(".img-container figure:nth-child(1) img").attr("src",fe_img.src);
-        $(".img-container figure:nth-child(1) figcaption").text(fe_display.img[1]);
-        $(".img-container figure:nth-child(2) img").attr("src",fe_img2.src);
-        $(".img-container figure:nth-child(2) figcaption").text(fe_display.img2[1]);
-
         recalibratePortfolioDisplay(selected_project_category_button);
     });
     $("#gd-button").click(function(){
@@ -85,12 +79,6 @@ $(document).ready(function() {
         $(this).css("background-color",selected_color);
         $("#fe-button").css("background-color",neutral_color);
         $("#games-button").css("background-color",neutral_color);
-
-        $("#projects h2").text(gd_display.title);
-        $(".img-container figure:nth-child(1) img").attr("src",gd_img.src);
-        $(".img-container figure:nth-child(1) figcaption").text(gd_display.img[1]);
-        $(".img-container figure:nth-child(2) img").attr("src",gd_img2.src);
-        $(".img-container figure:nth-child(2) figcaption").text(gd_display.img2[1]);
 
         recalibratePortfolioDisplay(selected_project_category_button);
     });
@@ -100,10 +88,6 @@ $(document).ready(function() {
         $("#fe-button").css("background-color",neutral_color);
         $("#gd-button").css("background-color",neutral_color);
 
-        $("#projects h2").text(games_display.title);
-        $(".img-container figure:nth-child(1) img").attr("src",games_img.src);
-        $(".img-container figure:nth-child(1) figcaption").text(games_display.img[1]);
-
         recalibratePortfolioDisplay(selected_project_category_button);
     });
 });
@@ -112,48 +96,35 @@ $(document).ready(function() {
 /* ----- HELPER FUNCTIONS ----- */
 //--------------------------------
 
-function countHiddenImgs() {
-    let count = $(".img-container figure").filter(function() {
-                    return $(this).css("display") == "none";
-                }).length;
-    return count;
-}
-
-// Determining which imgs to hide/reveal based on which button is selected and 
-// how many imgs are currently hidden
 function recalibrateImgDisplay(selected_project_category_button) {
-    let hiddenCount = countHiddenImgs();
+    let portfolio_imgs = $(".img-container figure");
+    portfolio_imgs.hide();
 
     switch(selected_project_category_button) {
         case "fe-button":
-            if (hiddenCount == 0) {
-                $(".img-container figure:nth-child(3)").css("display","none");
-                $(".img-container figure:nth-child(4)").css("display","none");
-            }
-            else if (hiddenCount == 3) {
-                $(".img-container figure:nth-child(2)").css("display","block");
-            }
+            $("#projects h2").text(fe_display.title);
+            $(".img-container figure:nth-child(1) img").attr("src",fe_img.src);
+            $(".img-container figure:nth-child(1) figcaption").text(fe_display.img[1]);
+            $(".img-container figure:nth-child(2) img").attr("src",fe_img2.src);
+            $(".img-container figure:nth-child(2) figcaption").text(fe_display.img2[1]);
+
+            portfolio_imgs.slice(0,2).show();
             break;
         case "gd-button":
-            if (hiddenCount == 2) {
-                $(".img-container figure:nth-child(3)").css("display","block");
-                $(".img-container figure:nth-child(4)").css("display","block");
-                }
-            if (hiddenCount == 3) {
-                $(".img-container figure:nth-child(2)").css("display","block");
-                $(".img-container figure:nth-child(3)").css("display","block");
-                $(".img-container figure:nth-child(4)").css("display","block");
-            }
+            $("#projects h2").text(gd_display.title);
+            $(".img-container figure:nth-child(1) img").attr("src",gd_img.src);
+            $(".img-container figure:nth-child(1) figcaption").text(gd_display.img[1]);
+            $(".img-container figure:nth-child(2) img").attr("src",gd_img2.src);
+            $(".img-container figure:nth-child(2) figcaption").text(gd_display.img2[1]);
+
+            portfolio_imgs.slice(0,5).show();
             break;
         case "games-button":
-            if (hiddenCount == 0) {
-                $(".img-container figure:nth-child(2)").css("display","none");
-                $(".img-container figure:nth-child(3)").css("display","none");
-                $(".img-container figure:nth-child(4)").css("display","none");
-            }
-            else if (hiddenCount == 2) {
-                $(".img-container figure:nth-child(2)").css("display","none");
-            }
+            $("#projects h2").text(games_display.title);
+            $(".img-container figure:nth-child(1) img").attr("src",games_img.src);
+            $(".img-container figure:nth-child(1) figcaption").text(games_display.img[1]);
+
+            portfolio_imgs.slice(0,1).show();
             break;
         default: break;
     }
