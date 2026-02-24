@@ -39,13 +39,23 @@ header {
 }
 
 nav {
-    padding: 2rem;
-    width: 100%;
-    height: fit-content;
-
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
-    gap: 3rem;
+    align-items: center;
+    padding: 1rem;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: right;
+    gap: 2rem;
+}
+
+nav img {
+    width: 40px;
+    height: auto;
+    justify-self: start;
 }
 
 nav a:hover, nav a:focus { color: #676666; }
