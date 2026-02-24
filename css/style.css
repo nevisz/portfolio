@@ -28,6 +28,8 @@ a {
     transition: color 0.4s
 }
 
+a:hover, nav a:focus { color: #676666; }
+
 header {
     width: 100%;
     height: fit-content;
@@ -61,8 +63,6 @@ nav img {
 
 .nav-links a { text-align: center; }
 
-.nav-links a:hover, nav a:focus { color: #676666; }
-
 main {
     width: 100%;
     height: fit-content;
@@ -81,6 +81,11 @@ main section h1 {
     font-size: 5.5rem;
     text-align: center;
     text-shadow: 0px 1px 5px grey;
+}
+
+main section h3 a { 
+    color: #423E3B;
+    text-decoration: underline;
 }
 
 main section:nth-child(1) {
@@ -128,6 +133,16 @@ footer {
 footer img {
     width: 23px;
     height: 23px; 
+}
+
+/* TRANSITIONS */
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02); /* subtle scale */
 }
 
 /* MEDIA QUERIES */

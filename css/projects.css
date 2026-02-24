@@ -1,10 +1,10 @@
-main section:nth-child(2) {
+main section {
     padding-top: 0;
     padding-left: 38px; padding-right: 38px;
     background: whitesmoke;
 }
 
-main section:nth-child(2) > p {
+main section > p {
     margin-top: 3.2rem;
     margin-bottom: 0;
     font-size: 2.5rem;
@@ -44,6 +44,8 @@ button:first-child {
     background-color: rgb(210, 207, 207);
 }
 
+#projects h2 { text-align: left; }
+
 #projects > p {
     margin-bottom: 30px;
 }
@@ -80,6 +82,8 @@ button:first-child {
     border-radius: 0.3rem;
     box-shadow: 0px 1px 9px rgb(202, 202, 202);
 }
+
+/* MEDIA QUERIES */
 
 @media (min-width: 768px) and (max-width: 978px) {
     .img-container {
