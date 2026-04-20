@@ -5,7 +5,41 @@
 :root {
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+
+    /* Font Sizes */
+    --h1-size: 7rem;
+    --h3-size: 2.5rem;
+    --h6-size: 1.25rem;
+    --p-size: 1rem;
+
+    /* Colours */
+    --dark-coffee: #40220f;
+    --cool-steel: #8fabc0;
 }
+
+/* GENERAL STYLES */
+
+a, p {
+    color: black;
+}
+
+a {
+    font-size: var(--p-size);
+    transition: color 0.4s
+}
+
+h1 { font-size: var(--h1-size); }
+
+h3 { font-size: var(--h3-size); }
+
+h6 { font-size: var(--h6-size); }
+
+img { height: auto; }
+
+/******/
+/******/
 
 body {
     margin: 0 auto;
@@ -20,15 +54,8 @@ body {
 
     background: url("../img/pawel-czerwinski-unsplash.jpg") no-repeat fixed center;
     background-size: cover;
-    color: #423E3B;
-}
-
-a {
     color: black;
-    transition: color 0.4s
 }
-
-a:hover, nav a:focus { color: #676666; }
 
 header {
     width: 100%;
@@ -37,7 +64,7 @@ header {
     top: 0px;
     z-index: 2;
     background-color: #D4CDC3;
-    box-shadow: 0px 1px 5px grey;
+    border-bottom: var(--dark-coffee) solid 1.5px;
 }
 
 nav {
@@ -49,8 +76,7 @@ nav {
 }
 
 nav img {
-    width: 40px;
-    height: auto;
+    width: 35px;
     justify-self: start;
 }
 
@@ -61,37 +87,69 @@ nav img {
     gap: 2rem;
 }
 
-.nav-links a { text-align: center; }
+.nav-links a { 
+    font-weight: 500;
+    text-align: center;
+}
+
+.nav-links a:hover, .nav-links a:focus { color: #676666; }
 
 main {
     width: 100%;
     height: fit-content;
-    font-size: 0.9rem;
 }
 
-main section {
+#headline-card {
+    margin-top: 14vh;
+    margin-bottom: 5.5rem;
     padding: 3.8rem; 
     width: 100%;
     height: fit-content;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
 }
 
-main section h1 {
+#headline-card h1 {
     margin: 0;
-    color: #423E3B;
-    font-size: 5.5rem;
-    text-align: center;
+    line-height: 6.25rem;
+    color: var(--dark-coffee);
+    text-align: left;
     text-shadow: 0px 1px 5px grey;
 }
 
-main section h3 a { 
-    color: #423E3B;
-    text-decoration: underline;
+#headline-card div h6 {
+    margin-bottom: 1.25rem;
+    text-align: left;
+    line-height: 1.5rem;
+    color: #484441;
 }
 
-main section:nth-child(1) {
-    margin-top: 11rem;
-    margin-bottom: 5.5rem;
-    text-align: center;
+#headline-card p {
+    margin: 0;
+    font-size: var(--p-size);
+    text-align: left;
+}
+
+.bullet-group {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+}
+
+.icon-links {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.icon-links a {
+    text-decoration: none;
+}
+
+.icon-links img {
+    width: 23px;
 }
 
 footer {
@@ -101,33 +159,12 @@ footer {
     position: fixed;
     bottom: 0px;
     z-index: 2;
-    background-color: whitesmoke;
-    border-top: lightgray solid 1.5px;
+    background-color: #D4CDC3;
+    border-top: var(--dark-coffee) solid 1.5px;
 
     display: flex;
     justify-content: center;
     gap: 1rem;
-}
-
-.pop-up {
-    padding: 4px;
-    width: fit-content;
-    height: fit-content;
-    font-size: 0.7rem;
-    background-color: #D4CDC3;
-    border-radius: 0.5rem;
-    position: absolute;
-    left: 50%;
-    bottom: 30px;
-
-    transform: translate(-50%, 10px);
-    opacity: 0;
-    transition: 0.3s ease-out;
-}
-
-#github-container:hover .pop-up, #github-container:focus .pop-up {
-    transform: translate(-50%, 0);
-    opacity: 1;
 }
 
 footer img {
@@ -138,32 +175,54 @@ footer img {
 /* TRANSITIONS */
 
 .hover-scale {
-  transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .hover-scale:hover {
-  transform: scale(1.02); /* subtle scale */
+    transform: scale(1.04); /* subtle scale */
+}
+
+.swing {
+    animation: tilt-swing 1.5s infinite alternate ease-in-out;
+    transform-origin: top center;
+    display: inline-block; 
+}
+
+@keyframes tilt-swing {
+    0% {
+        transform: rotate(3deg);
+    }
+    100% {
+        transform: rotate(-3deg);
+    }
 }
 
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 420px) {
-    main section:nth-child(1) {
+    #headline-card:nth-child(1) {
         padding: 38px;
     }
 }
 
 @media screen and (max-width: 768px) {
-    main section h1 {
+    #headline-card h1 {
         font-size: clamp(10px,15vw,4rem);
-    }
-    .img-container {
-        width: clamp(60%,80vw,100%);
+        line-height: clamp(10px,13.25vw,6.25rem);
     }
 }
 
-@media screen and (max-width: 1024px) {
-    main section h1 {
-        font-size: clamp(50px,8vw,95px);
+@media screen and (max-width: 1220px) {
+    #headline-card {
+        margin-top: 30vh;
+
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    #headline-card div h1 {
+        font-size: clamp(50px,15vw,115px);
+    }
+    #headline-card div h1, #headline-card div h6, #headline-card div p  { 
+        text-align: center;
     }
 }
