@@ -138,6 +138,7 @@ main {
     width: fit-content;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
     column-gap: 1rem;
 }
 
@@ -211,6 +212,9 @@ footer img {
     #headline-card:nth-child(1) {
         padding: 38px;
     }
+    .bullet-group {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -232,5 +236,8 @@ footer img {
     }
     #headline-card div h1, #headline-card div h6, #headline-card div p  { 
         text-align: center;
+    }
+    .bullet-group {
+        margin: 0 auto;
     }
 }
