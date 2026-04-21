@@ -23,6 +23,7 @@ main section > p {
 }
 
 #projects {
+    padding: 0;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -64,7 +65,7 @@ button:first-child {
 .accordion {
     padding: 0 3.8rem; 
     width: 100%;
-    margin: 0.75rem auto;
+    margin: 0.75rem 0;
 }
 
 .accordion-item {
@@ -129,7 +130,7 @@ button:first-child {
 }
 
 .accordion-item-body-content h6 {
-    margin: 28px 20px 16px 0;
+    margin: 28px 20px 12px 0;
     font-weight: 600;
 }
 
@@ -166,6 +167,12 @@ button:first-child {
 }
 
 /* MEDIA QUERIES */
+
+@media screen and (max-width: 420px) {
+    .accordion {
+        padding: 0 1.25rem; 
+    }
+}
 
 @media screen and (max-width: 768px) {
     .accordion-item-header {
