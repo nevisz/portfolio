@@ -23,7 +23,6 @@ main section > p {
 }
 
 #projects {
-    padding: 0;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -40,6 +39,11 @@ main section > p {
     justify-content: center;
     
     border-bottom: 2px solid var(--cool-steel);
+}
+
+#projects h3 {
+    margin-left: 1.25rem;
+    line-height: 2.5rem;
 }
 
 button {
@@ -168,13 +172,10 @@ button:first-child {
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 768px) {
     .accordion {
         padding: 0 1.25rem; 
     }
-}
-
-@media screen and (max-width: 768px) {
     .accordion-item-header {
         flex-direction: column;
         flex-wrap: wrap;
