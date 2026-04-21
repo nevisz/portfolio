@@ -5,7 +5,6 @@
         <meta charset="UTF-8">
         <meta name="author" content="Genevive Sanchez">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/projects.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="js/script.js"></script>
@@ -16,9 +15,9 @@
 
         <header>
             <nav>
-                <img src="img/initials-icon.svg" alt="GS icon">
+                <a href="index.html"><img src="img/icons/initials-icon.svg" alt="GS icon" class="hover-scale"></a>
                 <div class="nav-links">
-                    <a href="index.html">About Me</a>
+                    <a href="index.html">Home</a>
                     <a href="projects.html">Projects</a>
                 </div>
             </nav>
@@ -26,61 +25,250 @@
 
         <main>
 
-            <section>
-                <p style="margin-top: 0;">&bull;&bull;&bull;</p>
-                <article id="projects">
+            <article style="display:block;">
+                <section id="projects">
                     <div class="button-container">
-                        <button id="fe-button">Front End</button>
                         <button id="gd-button">Graphic Design</button>
                         <button id="games-button">Games</button>
                     </div>
 
-                    <h2>- Front End -</h2>
+                    <h3 style="margin: 0; color: var(--dark-coffee)"></h3>
+                </section>
 
-                    <div class="img-container">
-                        <figure>
-                            <img src="img/airbnb-project.png" alt="Screenshot of Airbnb webpage" class="hover-scale">
-                            <figcaption>Airbnb homepage replica using HTML and CSS (not responsive) </figcaption>
-                        </figure>
-                        <figure>
-                            <img src="img/madrid-de-metro-project.png" alt="Screenshot of webpage withh masonry layout" class="hover-scale">
-                            <figcaption>Article webpage using HTML and CSS (responsive, mobile first)</figcaption>
-                        </figure>
-                        <figure style="display:none;">
-                            <img src="img/windsong_branding_tote_bag.jpg" alt="Two, beige tote bags" class="hover-scale">
-                            <figcaption>Tote bag mockups for a hypothetical Taiwanese opera festival, Windsong; designed in Illustrator</figcaption>
-                        </figure>
-                        <figure style="display:none;">
-                            <img src="img/yearbook-cover.jpg" alt="Glow-in-the-dark, dark teal, radial yearbook cover" class="hover-scale" loading="lazy">
-                            <figcaption>Official 2021-2022 high school yearbook cover designed in Photoshop</figcaption>
-                        </figure>
-                        <figure style="display:none;">
-                            <img src="img/yearbook-doublespread.jpg" alt="Almond & light grey, floral-themed yearbook doublespread" class="hover-scale" loading="lazy">
-                            <figcaption>Yearbook doublespread designed in Photoshop</figcaption>
-                        </figure>
+                <section class="accordion">
+
+                    <div class="accordion-item" id="sago-po-accordion">
+                        <div class="accordion-item-header"> 
+                            Sago Po <span>&ZeroWidthSpace; Bubble Tea</span>
+                            
+                            <div class="icon-links">
+                                <span id="photoshop-container">
+                                    <a href="https://www.flaticon.com/free-icons/adobe-photoshop" target="_blank" rel="noopener noreferrer">
+                                        <img src="img/icons/adobe-photoshop.png" alt="Photoshop logo">
+                                    </a>
+                                </span>
+                                <span id="illustrator-container">
+                                    <a href="https://www.flaticon.com/free-icons/adobe-photoshop" target="_blank" rel="noopener noreferrer">
+                                        <img src="img/icons/adobe-illustrator.png" alt="Illustrator logo">
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item-body">
+                            <div class="accordion-item-body-content">
+                                <div class="img-container">
+                                    <figure>
+                                        <img src="img/sago-po-logos.png" alt="Logo horizontal and vertical orientations for bubble tea store">
+                                    </figure>
+                                    <figure>
+                                        <img src="img/sago-po-brand-guidelines.png" alt="Combination logo and brand mockups for bubble tea store">
+                                    </figure>
+                                    <figure>
+                                        <img src="img/sago-po-poster.png" alt="Poster for bubble tea store">
+                                    </figure>
+                                </div>
+
+                                <h6>Ideation</h6>
+
+                                <p>Sago Po is a hypothetical, family-run, Filipino-inspired bubble tea shop located in the bustling heart of Midtown Toronto. Sago Po's mission is to fill everyone's cups &mdash; metaphorically-speaking too!</p>
+                                <p style="padding-top: 12px;"> The intent was to make Filipino flavours appealing to urban teenagers and/or young adults (especially Filipinos but not strictly so) in a way that doesn't dilute Filipino culture. Initially, I knew I wanted the brand logo to incorporate a Filipino elderly &lpar;since "po" is a signifier of respect in sentences and verbal conversations&rpar;. But I also wanted it to be playful.</p>
+
+                                <h6>Sketches</h6>
+
+                                <div class="img-container">
+                                    <figure>
+                                        <img src="img/sketches/sago-po-sketch-1.jpg" alt="">
+                                    </figure>
+                                    <figure>
+                                        <img src="img/sketches/sago-po-sketch-2.jpg" alt="">
+                                    </figure>
+                                    <figure>
+                                        <img src="img/sketches/sago-po-sketch-3.jpg" alt="">
+                                    </figure>
+                                    <figure>
+                                        <img src="img/sketches/sago-po-sketch-4.jpg" alt="">
+                                    </figure>
+                                </div>
+
+                                <h6>Variations and Iterations</h6>
+
+                                <div class="img-container">
+                                    <figure>
+                                        <img src="img/iterations/sago-po-logo-evolution-2.png" alt="">
+                                    </figure>
+                                    <figure>
+                                        <img src="img/iterations/sago-po-logo-evolution.png" alt="">
+                                    </figure>
+                                    <figure>
+                                        <img src="img/iterations/sago-po-logo-evolution-3.png" alt="">
+                                    </figure>
+                                    <figure>
+                                        <img src="img/iterations/sago-po-logo-evolution-4.png" alt="">
+                                    </figure>
+                                    <figure>
+                                        <img src="img/iterations/sago-po-poster-evolution.png" alt="">
+                                    </figure>
+                                    <figure>
+                                        <img src="img/iterations/sago-po-poster-evolution-2.png" alt="">
+                                    </figure>
+                                    <figure>
+                                        <img src="img/iterations/sago-po-poster-evolution-3.png" alt="">
+                                    </figure>
+                                    <figure>
+                                        <img src="img/iterations/sago-po-poster-evolution-4.png" alt="">
+                                    </figure>
+                                </div>
+
+                                <h6>Learning Hurdles</h6>
+
+                                <p>&bullet; Balancing complexity in form, colouring and shading with minimalism so that the logo design is scalable for smaller sizes (ie. stickers, favicons)</p>
+
+                                <h6>Learning Outcomes</h6>
+
+                                <p>&bullet; Repurposing brand assets and visuals for different mediums</p>
+                                <p>&bullet; Text hierarchy</p>
+                                <p>&bullet; Demonstrating non-destructive editing techniques in Photoshop </p>
+
+                            </div>
+                        </div>
                     </div>
-                </article>
-            </section>
+
+                    <div class="accordion-item" id="windsong-accordion">
+                        <div class="accordion-item-header">
+                            Windsong Festival
+                            
+                            <div class="icon-links">
+                                <span id="photoshop-container">
+                                    <a href="https://www.flaticon.com/free-icons/adobe-photoshop" target="_blank" rel="noopener noreferrer">
+                                        <img src="img/icons/adobe-photoshop.png" alt="Photoshop logo">
+                                    </a>
+                                </span>
+                                <span id="illustrator-container">
+                                    <a href="https://www.flaticon.com/free-icons/adobe-photoshop" target="_blank" rel="noopener noreferrer">
+                                        <img src="img/icons/adobe-illustrator.png" alt="Illustrator logo">
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item-body">
+                            <div class="accordion-item-body-content">
+                                <div class="img-container">
+                                    <figure>
+                                        <img src="img/windsong-poster.png" alt="Poster promoting Windsong music festival">
+                                    </figure>
+                                    <figure>
+                                        <img src="img/windsong-digital-story.png" alt="Social media story promoting Windsong music festival, repurposing assets">
+                                    </figure>
+                                    <figure>
+                                        <img src="img/windsong-shirt.jpg" alt="White t-shirt using the brand visuals of Windsong music festival">
+                                    </figure>
+                                    <figure>
+                                        <img src="img/windsong-tote-bag.jpg" alt="Cream, linen tote bag using the brand visuals of Windsong music festival">
+                                    </figure>
+                                </div>
+
+                                <h6>Ideation</h6>
+
+                                <p>Windsong is a hypothetical opera festival held in Taipei, Taiwan, and follows the tales of forbidden lovers who love is cradled, carried and delivered by the wind.</p>
+                                <p style="padding-top: 12px;"> The intent was to blend Chinese/Taiwanese aesthetics with contemporary minimalism to create cultural/folk, modern/elegant visuals. To fulfill the cultural/folk visuals, I initially planned to incorporate national colours (ie. some combination of red, magenta, gold, blue, jade), recurring nature elements (ie. water ripple/waves, wind lines, the moon) and recurring symbols (ie. the plum blossom and traditional Chinese patterns). To fulfill the modern/elegant visuals, I initially planned to pair gold with red and/or blue, and pair a script font with a serif or sans-serif font, using thin lines will reinforce this further. </p>
+
+                                <h6>Sketches</h6>
+
+                                <div class="img-container">
+                                    <figure>
+                                        <img src="img/sketches/windsong-sketch.jpg" alt="">
+                                    </figure>
+                                </div>
+
+                                <h6>Learning Hurdles</h6>
+
+                                <p>&bullet; Working with a colour palette with more than 3 colours, and mixing up their roles (ie. primary, secondary and accent colours)</p>
+                                <p>&bullet; Having colours within the larger colour palette create colour dissonance depending on how they're used together</p>
+
+                                <h6>Learning Outcomes</h6>
+
+                                <p>&bullet; Interpeting a professional design brief</p>
+                                <p>&bullet; Repurposing brand assets and visuals for different mediums</p>
+                                <p>&bullet; Text hierarchy</p>
+                                <p>&bullet; Script type should be used <i>sparingly</i> as it can harm both legibility and readability. This is especially the case for script type with thin, natural strokes. </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item" id="wordle-accordion">
+                        <div class="accordion-item-header"> 
+                            Lenient Wordle
+                            <div class="icon-links">
+                                <span id="java-container">
+                                    <a href="https://www.flaticon.com/free-icons/java" target="_blank" rel="noopener noreferrer">
+                                        <img src="img/icons/java.png" alt="Java logo">
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item-body">
+                            <div class="accordion-item-body-content">
+                                <div class="img-container">
+                                    <figure>
+                                        <img src="img/wordle-project.png" alt="Screenshot of Wordle GUI">
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item" id="yearbook-accordion">
+                        <div class="accordion-item-header">
+                            Highschool <span>&ZeroWidthSpace; Yearbook &ZeroWidthSpace;</span> Doublespreads
+
+                            <div class="icon-links">
+                                <span id="photoshop-container">
+                                    <a href="https://www.flaticon.com/free-icons/adobe-photoshop" target="_blank" rel="noopener noreferrer">
+                                        <img src="img/icons/adobe-photoshop.png" alt="Photoshop logo">
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item-body">
+                            <div class="accordion-item-body-content">
+                                <div class="img-container">
+                                    <figure>
+                                        <img src="img/yearbook-cover.jpg" alt="">
+                                    </figure>
+                                    <figure>
+                                        <img src="img/yearbook-doublespread.jpg" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </article>
             
         </main>
 
         <footer>
             <div id="linkedin-container">
-                <a href="https://www.linkedin.com/in/genevive-sanchez-1548b42aa" title="Linkedin icons created by riajulislam - Flaticon" target="_blank" rel="noopener noreferrer">
-                    <img src="img/linkedin.png" alt="LinkedIn logo">
+                <a href="https://www.linkedin.com/in/genevive-sanchez-1548b42aa" target="_blank" rel="noopener noreferrer">
+                    <img src="img/icons/linkedin.png" alt="LinkedIn logo">
                 </a>
             </div>
 
             <div id="github-container">
                 <a href="https://github.com/nevisz" target="_blank" rel="noopener noreferrer">
-                    <img src="img/github-mark.png" alt="GitHub logo">
+                    <img src="img/icons/github-mark.png" alt="GitHub logo">
                 </a>
-                <div class="pop-up">GitHub :3</div>
             </div>
             
             <div id="instagram-container">
-                <a href="https://www.flaticon.com/free-icons/instagram-logo" title="Instagram logo icons created by Freepik - Flaticon" target="_blank" rel="noopener noreferrer">
-                    <img src="img/instagram-logo.png" alt="Instagram logo">
+                <a href="https://www.flaticon.com/free-icons/instagram-logo" target="_blank" rel="noopener noreferrer">
+                    <img src="img/icons/instagram-logo.png" alt="Instagram logo">
                 </a>
             </div>
         </footer>
