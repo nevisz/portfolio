@@ -21,11 +21,10 @@ $(document).ready(function() {
     $("nav a").css("text-decoration","none");
 
     switch(page) {
-        case "index.html":
         case "":
             $("nav a[href='index.html']").css("text-decoration","underline");
             break;
-        case "projects.html":
+        case "projects":
             $("nav a[href='projects.html']").css("text-decoration","underline");
             break;
         default: break;
