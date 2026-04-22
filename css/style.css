@@ -128,6 +128,7 @@ main {
 }
 
 #headline-card div h6 {
+    margin-top: 1.25rem;
     margin-bottom: 1.25rem;
     text-align: left;
     line-height: 1.5rem;
