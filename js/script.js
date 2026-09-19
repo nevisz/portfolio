@@ -30,79 +30,45 @@ $(document).ready(function() {
         default: break;
     }
 
-    // For Project Category Buttons
+    $(".filter-button").click(function() {
 
-    recalibratePortfolioDisplay(selected_project_category_button);
+        // Get the filter that was clicked
+        let filter = $(this).data("filter");
 
-    $("button").mouseover(function(){
-        if ($(this).attr("id") != selected_project_category_button) {
-            $(this).css("background-color",hover_color);
-        }
-    });
-    $("button").mouseout(function(){
-        if ($(this).attr("id") != selected_project_category_button) {
-            $(this).css("background-color",neutral_color);
-        }
-    });
-    $("#gd-button").click(function(){
-        selected_project_category_button = $(this).attr("id");
-        $(this).css("background-color",selected_color);
-        $("#games-button").css("background-color",neutral_color);
+        // Turn every button off
+        $(".filter-button").removeClass("active");
 
-        recalibratePortfolioDisplay(selected_project_category_button);
-    });
-    $("#games-button").click(function(){
-        selected_project_category_button = $(this).attr("id");
-        $(this).css("background-color",selected_color);
-        $("#gd-button").css("background-color",neutral_color);
+        // Turn the clicked button on
+        $(this).addClass("active");
 
-        recalibratePortfolioDisplay(selected_project_category_button);
-    });
-    $(".accordion-item-header").click(function() {
-        const $currentlyActive = $(".accordion-item-header.active");
+        // Show/hide projects
+        $(".project-card").each(function() {
 
-        if ($currentlyActive.length && !$currentlyActive.is($(this))) {
-            $currentlyActive.removeClass("active");
-            $currentlyActive.next().css("max-height", 0);
-        }
+            // "All" shows every project
+            if (filter === "all") {
+                $(this).show();
+                return;
+            }
 
-        $(this).toggleClass("active");
-  
-        const $accordionItemBody = $(this).next();
+            // Look at all tags belonging to this project
+            let hasTag = false;
 
-        if ($(this).hasClass("active")) {
-            $accordionItemBody.css("max-height", $accordionItemBody.prop("scrollHeight") + "px");
-        } else {
-            $accordionItemBody.css("max-height", 0);
-        }
+            $(this).find(".project-tags span").each(function() {
+
+                if ($(this).text().trim() === filter) {
+                    hasTag = true;
+                }
+
+            });
+
+            // Show project if it has the selected tag
+            if (hasTag) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+
+        });
+
     });
 });
-
-//--------------------------------
-/* ----- HELPER FUNCTIONS ----- */
-//--------------------------------
-
-function recalibratePortfolioDisplay(selected_project_category_button) {
-    /*  let portfolio_imgs = $(".img-container figure");
-    portfolio_imgs.hide(); */
-
-    switch(selected_project_category_button) {
-        case "gd-button":
-            $("#projects h3").text("Graphic Design");
-
-            $("#sago-po-accordion").show();
-            $("#windsong-accordion").show();
-            $("#wordle-accordion").hide();
-            $("#yearbook-accordion").show();
-            break;
-        case "games-button":
-            $("#projects h3").text("Games");
-            
-            $("#sago-po-accordion").hide();
-            $("#windsong-accordion").hide();
-            $("#wordle-accordion").show();
-            $("#yearbook-accordion").hide();
-            break;
-        default: break;
-    }
-}
