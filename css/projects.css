@@ -115,7 +115,7 @@ main article {
 
 @media screen and (max-width: 768px) {
     #filters-col, #projects-col {
-        padding: 1rem;
+        padding: 2rem 0;
     }
 }
 
