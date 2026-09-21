@@ -68,6 +68,12 @@ main article {
     text-decoration: none;
 }
 
+#projects-col .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
 #projects-col .project-tags span {
     padding: 3px;
     background-color: none;
