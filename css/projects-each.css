@@ -63,7 +63,7 @@ img { height: auto; }
 /******/
 
 body {
-    margin: 38px;
+    margin: min(5vw, 38px);
     height: 100vh;
     background: whitesmoke;
 }
